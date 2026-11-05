@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primera practica html</title>
+    <style>
+        a {
+            color: rgb(252, 189, 112);
+            text-align: center;
+        }
+
+        h1 {
+            color: rgb(5, 131, 139);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h2 {
+            color: rgb(47, 1, 139);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-align: center;
+        }
+
+        h3 {
+            color: rgb(9, 237, 39);
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        ol {
+            color: blueviolet;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+    </style>
+<link rel="stylesheet" type="text/css" href="Estilo.css"/>
+<script type="text/javascript" src="codigo.js"></script>
+<script type text="text/javascript">alert("Bienvenido a esta pagina");</script>
+</head>
+<body class ="Contenedor">
+    <p id="demo"></p>
+    <p onclick="alert('Un mensaje de prueba')"> haga click para que salte la alerta</p>
+    <header class="ca">
+        <img src="Logo_universidad_UTM (1).png" alt="Logo de la utm" width="200" height="150">
+        <img src="bonita.png" alt="Una imagen bonita" width="120" height="120">
+        <h1> Mi primer web</h1>
+    </header>
+    <div class="contenido">
+    <nav class="Me">
+        <h2>Menú</h2>
+        <ul>
+            <li><a href="Info.html">Información</a></li>
+            <li><a href="tabla.html">Tabla</a></li>
+        </ul>
+        <ol>
+            <h2>Integrantes del grupo</h2>
+            <li>Alan Ricardo Sanchez Cantos</li>
+            <li>HUGO ENRIQUE MENDOZA COELLO</li><br>
+            <img src="WhatsApp Image 2026-10-01 at 8.50.18 AM.jpeg" alt="foto de los creadores de esta web " width="250"
+                height="200"><br>
+
+        </ol>
+    </nav>
+    <article class="li">
+        <h3>
+            <h2> Links Importantes</h2>
+            Link de la universidad tecnica de Manabí: <a href="https://www.utm.edu.ec/" target="_blank"
+                title="enlace a la universidad de la practica">
+                UTM </a>
+        </h3>
+        <a href=mailto:etandazo9266@utm.edu.ec target="_blank"> ven a mi correo
+        </a>
+    </article>
+</div>
+    <footer class="patas">
+        <a href="https://www.utm.edu.ec/">Ingreso a enlace utm</a>
+    </footer>
+
+</body>
+
+</html>
+<!--- href, src, alt y style son esenciales para enlaces, imagenes y estilos en linea
+ etiquetas header, footer, nav, section, aside ,footer y article son importantes para la estructura semántica de la página
+ las etiquetas vacias como img(inserta imagen) 
+ etiquetas de aoertyra y cierre como <b> y </b> o <h1></h1> le podemos añadir modificadores como id="Main title" que podemos decirle que le añada un diseño
+href es un tributo que contiene una url, title tambien es un atributo que muestra un mensaje cuando se pase el mouse encima
+los atributos target son para que los links se abran de diferentes formas, _self es valor por defecto
+_blank abre el link en una nueva pestaña, _parent abre el documento en la 
+mailto: dentro del atributo href de un enlace, permite abrir el correo electronico del desarrolador/usuario 
+el atributo alt se utiliza para mostrar un texto el cual de contexto de la imagen
+El sistema debe tener un dashboard al final del semestre
+el navegador lee HTML como el script
+manejadores de eventos 
+onAbort /onBlur/ onChange/ onClick/onDblClick/on DragDrop
+-->

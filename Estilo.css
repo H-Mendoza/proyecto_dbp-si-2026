@@ -1,0 +1,24 @@
+body {
+    background-color: rgb(247, 248, 243);
+}
+.Contenedor {
+    display: grid;
+    grid-template-rows: auto auto 300px auto;
+    min-height: 100vh;
+}
+.contenido{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+.ca{
+    background-color: brown;
+}
+.Me{
+    background-color: chocolate;
+}
+.li{
+    background-color:darkred;
+}
+.patas{
+    background-color:hotpink;
+}
