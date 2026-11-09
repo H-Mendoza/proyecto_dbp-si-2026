@@ -1,0 +1,421 @@
+/* ==========================================
+   Agenda de Tareas - Hoja de estilos
+   Diseño pensado primero para celular y
+   luego se adapta a pantallas más grandes
+   ========================================== */
+
+/* ---------- Colores y valores que se repiten ---------- */
+:root {
+  --fondo: #F4F6FB;
+  --blanco: #FFFFFF;
+  --texto: #1F2937;
+  --texto-suave: #4B5563;
+  --azul: #1D4ED8;
+  --azul-oscuro: #1E3A8A;
+  --rojo: #B91C1C;
+  --verde: #166534;
+  --borde: #6B7280;
+  --hoy: #FEF3C7;
+  --foco: #B45309;
+}
+
+/* ---------- Estilos generales ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 1rem;          /* 16px */
+  line-height: 1.5;
+  color: var(--texto);
+  background-color: var(--fondo);
+}
+
+/* El atributo hidden debe ocultar siempre */
+[hidden] {
+  display: none !important;
+}
+
+h1 {
+  font-size: 1.75rem;       /* 28px */
+  margin: 0 0 1rem 0;
+}
+
+h2 {
+  font-size: 1.25rem;       /* 20px */
+  margin: 0 0 0.75rem 0;
+}
+
+a {
+  color: var(--azul);
+}
+
+/* Texto que solo leen los lectores de pantalla */
+.oculto {
+  position: absolute;
+  left: -9999px;
+}
+
+/* ---------- Enlace para saltar al contenido ---------- */
+.salto {
+  position: absolute;
+  left: -9999px;
+  background-color: var(--blanco);
+  padding: 0.5rem 1rem;
+}
+
+.salto:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+  z-index: 10;
+}
+
+/* ---------- Foco visible para usar con teclado ---------- */
+a:focus,
+button:focus,
+input:focus,
+select:focus {
+  outline: 3px solid var(--foco);
+  outline-offset: 2px;
+}
+
+header a:focus {
+  outline-color: var(--blanco);
+}
+
+/* ---------- Encabezado y menú (Flexbox) ---------- */
+header {
+  background-color: var(--azul-oscuro);
+  color: var(--blanco);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.logo {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+nav a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--blanco);
+  text-decoration: none;
+  border: 2px solid var(--blanco);
+  border-radius: 6px;
+}
+
+nav a:hover {
+  background-color: var(--blanco);
+  color: var(--azul-oscuro);
+}
+
+/* La página actual se marca con fondo blanco (no solo con color) */
+nav a[aria-current="page"] {
+  background-color: var(--blanco);
+  color: var(--azul-oscuro);
+  font-weight: bold;
+}
+
+.saludo {
+  margin: 0;
+}
+
+/* ---------- Contenido principal ---------- */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.tarjeta {
+  background-color: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* ---------- Formularios ---------- */
+.campo {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.6rem;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 2px solid var(--borde);
+  border-radius: 6px;
+  background-color: var(--blanco);
+  color: var(--texto);
+}
+
+/* Campo con error: borde rojo */
+input[aria-invalid="true"],
+select[aria-invalid="true"] {
+  border-color: var(--rojo);
+}
+
+.error {
+  margin: 0.25rem 0 0 0;
+  color: var(--rojo);
+  font-weight: bold;
+}
+
+/* Se agrega la palabra "Error" para no depender solo del color */
+.error:not(:empty)::before {
+  content: "Error: ";
+}
+
+.exito {
+  color: var(--verde);
+  font-weight: bold;
+}
+
+.ayuda {
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
+/* ---------- Botones ---------- */
+.boton {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--blanco);
+  background-color: var(--azul);
+  border: 2px solid var(--azul);
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.boton:hover {
+  background-color: var(--azul-oscuro);
+  border-color: var(--azul-oscuro);
+}
+
+.boton-secundario {
+  background-color: var(--blanco);
+  color: var(--azul);
+}
+
+.boton-secundario:hover {
+  background-color: var(--fondo);
+  color: var(--azul-oscuro);
+}
+
+.boton-peligro {
+  background-color: var(--rojo);
+  border-color: var(--rojo);
+}
+
+.boton-peligro:hover {
+  background-color: #7F1D1D;
+  border-color: #7F1D1D;
+}
+
+/* ---------- Listas de materias y pendientes ---------- */
+.lista {
+  list-style: none;
+  margin: 0 0 1rem 0;
+  padding: 0;
+}
+
+.lista li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--borde);
+}
+
+.lista li:last-child {
+  border-bottom: none;
+}
+
+.lista label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  font-weight: normal;
+}
+
+.lista input[type="checkbox"] {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+/* Pendiente ya hecho */
+.hecho {
+  text-decoration: line-through;
+  color: var(--texto-suave);
+}
+
+/* ---------- Calendario (Grid para la distribución general) ---------- */
+.agenda-grid {
+  display: grid;
+  grid-template-columns: 1fr;   /* en celular: una sola columna */
+  gap: 1rem;
+}
+
+.barra-mes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.nombre-mes {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.calendario {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.calendario th,
+.calendario td {
+  border: 1px solid var(--borde);
+  text-align: center;
+  padding: 0;
+}
+
+.calendario th {
+  background-color: var(--fondo);
+  padding: 0.3rem 0;
+  font-size: 0.85rem;
+}
+
+.calendario td.vacio {
+  background-color: var(--fondo);
+}
+
+.calendario td.hoy {
+  background-color: var(--hoy);
+  border: 3px solid var(--foco);
+}
+
+/* Cada día es un botón */
+.dia {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.2rem 0;
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: var(--texto);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.dia:hover {
+  background-color: var(--fondo);
+}
+
+/* Número de pendientes de ese día */
+.cantidad {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: var(--blanco);
+  background-color: var(--azul);
+  border-radius: 10px;
+  margin: 0 auto;
+  width: 1.4rem;
+}
+
+/* ---------- Pie de página ---------- */
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: var(--blanco);
+  background-color: var(--azul-oscuro);
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ==========================================
+   Diseño adaptable (media queries)
+   ========================================== */
+
+/* Tablet y escritorio: pantallas desde 768px */
+@media (min-width: 768px) {
+  header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  main {
+    padding: 1.5rem;
+  }
+
+  /* En escritorio el calendario y el formulario van lado a lado */
+  .agenda-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .dia {
+    min-height: 56px;
+    font-size: 1rem;
+  }
+}
+
+/* Celulares pequeños: menos de 480px */
+@media (max-width: 480px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  .boton {
+    width: 100%;
+    text-align: center;
+  }
+
+  .barra-mes .nombre-mes {
+    order: -1;
+    width: 100%;
+    text-align: center;
+  }
+}

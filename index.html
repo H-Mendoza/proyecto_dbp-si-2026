@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Agenda de tareas para estudiantes: registra tus materias y organiza tus pendientes.">
+  <title>Inicio - Agenda de Tareas</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+
+  <header>
+    <p class="logo">Agenda de Tareas</p>
+    <nav aria-label="Menú principal">
+      <ul>
+        <li><a href="index.html" aria-current="page">Inicio</a></li>
+        <li><a href="materias.html">Materias</a></li>
+        <li><a href="agenda.html">Agenda</a></li>
+      </ul>
+    </nav>
+    <p id="saludo" class="saludo"></p>
+  </header>
+
+  <main id="contenido">
+    <h1>Bienvenido a tu agenda</h1>
+
+    <!-- Se muestra cuando todavía no hay un usuario registrado -->
+    <section id="seccion-registro" class="tarjeta">
+      <h2>Regístrate</h2>
+      <p>Escribe tu nombre y apellido para empezar a organizar tus tareas.</p>
+
+      <form id="form-registro" novalidate>
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" autocomplete="given-name" aria-describedby="error-nombre">
+          <p class="error" id="error-nombre" role="alert"></p>
+        </div>
+
+        <div class="campo">
+          <label for="apellido">Apellido</label>
+          <input type="text" id="apellido" name="apellido" autocomplete="family-name" aria-describedby="error-apellido">
+          <p class="error" id="error-apellido" role="alert"></p>
+        </div>
+
+        <button type="submit" class="boton">Registrarme</button>
+      </form>
+    </section>
+
+    <!-- Se muestra cuando el usuario ya se registró antes -->
+    <section id="seccion-bienvenida" class="tarjeta" hidden>
+      <h2>Qué bueno verte de nuevo</h2>
+      <p id="texto-bienvenida"></p>
+      <p>
+        <a class="boton" href="agenda.html">Ir a mi agenda</a>
+        <a class="boton boton-secundario" href="materias.html">Ver mis materias</a>
+      </p>
+      <p>
+        <button type="button" id="boton-borrar" class="boton boton-peligro">Borrar mis datos</button>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Proyecto de medio ciclo - Desarrollo Basado en Plataformas - UTM</p>
+  </footer>
+
+  <script src="js/comun.js"></script>
+  <script src="js/registro.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Calendario y lista de tareas pendientes por materia.">
+  <title>Agenda - Agenda de Tareas</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+
+  <header>
+    <p class="logo">Agenda de Tareas</p>
+    <nav aria-label="Menú principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="materias.html">Materias</a></li>
+        <li><a href="agenda.html" aria-current="page">Agenda</a></li>
+      </ul>
+    </nav>
+    <p id="saludo" class="saludo"></p>
+  </header>
+
+  <main id="contenido">
+    <h1>Mi agenda de pendientes</h1>
+    <p id="resumen" role="status"></p>
+
+    <div class="agenda-grid">
+      <!-- Calendario del mes -->
+      <section class="tarjeta" aria-labelledby="titulo-calendario">
+        <h2 id="titulo-calendario">Calendario</h2>
+        <div class="barra-mes">
+          <button type="button" id="mes-anterior" class="boton boton-secundario">Mes anterior</button>
+          <p id="nombre-mes" class="nombre-mes" aria-live="polite"></p>
+          <button type="button" id="mes-siguiente" class="boton boton-secundario">Mes siguiente</button>
+        </div>
+        <table class="calendario">
+          <caption class="oculto">Calendario con los pendientes de cada día</caption>
+          <thead>
+            <tr>
+              <th scope="col"><abbr title="Lunes">Lun</abbr></th>
+              <th scope="col"><abbr title="Martes">Mar</abbr></th>
+              <th scope="col"><abbr title="Miércoles">Mié</abbr></th>
+              <th scope="col"><abbr title="Jueves">Jue</abbr></th>
+              <th scope="col"><abbr title="Viernes">Vie</abbr></th>
+              <th scope="col"><abbr title="Sábado">Sáb</abbr></th>
+              <th scope="col"><abbr title="Domingo">Dom</abbr></th>
+            </tr>
+          </thead>
+          <tbody id="cuerpo-calendario"></tbody>
+        </table>
+        <p class="ayuda">Pulsa un día para usarlo como fecha del nuevo pendiente.</p>
+      </section>
+
+      <!-- Formulario para agregar un pendiente -->
+      <section class="tarjeta" aria-labelledby="titulo-form">
+        <h2 id="titulo-form">Nuevo pendiente</h2>
+
+        <div id="aviso-sin-materias" hidden>
+          <p>Primero debes agregar al menos una materia.</p>
+          <p><a class="boton" href="materias.html">Agregar materias</a></p>
+        </div>
+
+        <form id="form-pendiente" novalidate>
+          <div class="campo">
+            <label for="materia-pendiente">Materia</label>
+            <select id="materia-pendiente" name="materia" aria-describedby="error-materia-pendiente"></select>
+            <p class="error" id="error-materia-pendiente" role="alert"></p>
+          </div>
+
+          <div class="campo">
+            <label for="descripcion">Descripción de la tarea</label>
+            <input type="text" id="descripcion" name="descripcion" aria-describedby="error-descripcion">
+            <p class="error" id="error-descripcion" role="alert"></p>
+          </div>
+
+          <div class="campo">
+            <label for="fecha">Fecha de entrega</label>
+            <input type="date" id="fecha" name="fecha" aria-describedby="error-fecha">
+            <p class="error" id="error-fecha" role="alert"></p>
+          </div>
+
+          <button type="submit" class="boton">Agregar pendiente</button>
+        </form>
+      </section>
+    </div>
+
+    <!-- Lista de pendientes -->
+    <section class="tarjeta" aria-labelledby="titulo-lista">
+      <h2 id="titulo-lista">Lista de pendientes</h2>
+      <p id="sin-pendientes">No tienes pendientes registrados.</p>
+      <ul id="lista-pendientes" class="lista"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Proyecto de medio ciclo - Desarrollo Basado en Plataformas - UTM</p>
+  </footer>
+
+  <script src="js/comun.js"></script>
+  <script src="js/agenda.js"></script>
+</body>
+</html>

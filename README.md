@@ -1,1 +1,0 @@
-# Sistema Multiplataforma de Gestion

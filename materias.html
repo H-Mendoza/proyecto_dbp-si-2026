@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Agrega las materias que cursas para asignarles tareas pendientes.">
+  <title>Materias - Agenda de Tareas</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+
+  <header>
+    <p class="logo">Agenda de Tareas</p>
+    <nav aria-label="Menú principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="materias.html" aria-current="page">Materias</a></li>
+        <li><a href="agenda.html">Agenda</a></li>
+      </ul>
+    </nav>
+    <p id="saludo" class="saludo"></p>
+  </header>
+
+  <main id="contenido">
+    <h1>Mis materias</h1>
+
+    <section class="tarjeta">
+      <h2>Agregar materia</h2>
+      <form id="form-materia" novalidate>
+        <div class="campo">
+          <label for="materia">Nombre de la materia</label>
+          <input type="text" id="materia" name="materia" aria-describedby="error-materia">
+          <p class="error" id="error-materia" role="alert"></p>
+        </div>
+        <button type="submit" class="boton">Agregar materia</button>
+      </form>
+      <p id="mensaje-ok" class="exito" role="status"></p>
+    </section>
+
+    <section class="tarjeta">
+      <h2>Materias registradas</h2>
+      <p id="sin-materias">Todavía no has agregado materias.</p>
+      <ul id="lista-materias" class="lista"></ul>
+      <p><a class="boton boton-secundario" href="agenda.html">Ir a la agenda</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Proyecto de medio ciclo - Desarrollo Basado en Plataformas - UTM</p>
+  </footer>
+
+  <script src="js/comun.js"></script>
+  <script src="js/materias.js"></script>
+</body>
+</html>
